@@ -47,11 +47,11 @@ async def on_message(message):
     if message.content in ['!select map and difficulty', '!smd']:
         response = choice(LIST_OF_MAPS)
         difficulty = choice(DIFFICULTY)
-        await message.channel.send(f'_{message.author}_ has requested the ether to choose a map, and they chose **{response}** with difficulty of **{difficulty}**!')
+        await message.channel.send(f'{message.author} has requested the ether to choose a map, and they chose **{response}** with difficulty of **{difficulty}**!')
 
     if message.content in ['!select difficulty', '!sd']:
         difficulty = choice(DIFFICULTY)
-        await message.channel.send(f'_{message.author}_ has requested the ether to choose difficulty, and they chose a difficulty of **{difficulty}**!')
+        await message.channel.send(f'{message.author} has requested the ether to choose difficulty, and they chose a difficulty of **{difficulty}**!')
 
 
 client.run(TOKEN)
