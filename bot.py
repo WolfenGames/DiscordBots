@@ -61,7 +61,7 @@ async def on_message(message):
         difficulty = choice(DIFFICULTY)
         await message.channel.send(f'{message.author} has requested the ether to choose difficulty, and they chose a difficulty of **{difficulty}**!')
 
-    if message.content in ['!help']:
+    if message.content in ['!phasmo help', '!ph']:
         await message.channel.send(f'{HELP_TEXT}')
 
 client.run(TOKEN)
