@@ -40,14 +40,18 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content == '!select map':
+    if message.content in ['!select map', '!sm']:
         response = choice(LIST_OF_MAPS)
         await message.channel.send(f'{message.author} has requested the ether to choose a map, and they chose **{response}**!')
 
-    if message.content == '!select map and difficulty':
+    if message.content in ['!select map and difficulty', '!smd']:
         response = choice(LIST_OF_MAPS)
         difficulty = choice(DIFFICULTY)
         await message.channel.send(f'_{message.author}_ has requested the ether to choose a map, and they chose **{response}** with difficulty of **{difficulty}**!')
+
+    if message.content in ['!select difficulty', '!sd']:
+        difficulty = choice(DIFFICULTY)
+        await message.channel.send(f'_{message.author}_ has requested the ether to choose difficulty, and they chose a difficulty of **{difficulty}**!')
 
 
 client.run(TOKEN)
