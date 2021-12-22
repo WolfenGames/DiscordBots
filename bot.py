@@ -31,6 +31,14 @@ DIFFICULTY = [
     'Nightmare'
 ]
 
+HELP_TEXT = """
+ **Welcome to the phasmaphobia map selector bot**
+ I understand certain commands such as
+ * `!select map` or `!sm` to select a map
+ * `!select map and difficulty` or `!smd` to select a map with difficulty
+ * `!select difficulty` or `!sd` to select a difficulty
+"""
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -53,5 +61,7 @@ async def on_message(message):
         difficulty = choice(DIFFICULTY)
         await message.channel.send(f'{message.author} has requested the ether to choose difficulty, and they chose a difficulty of **{difficulty}**!')
 
+    if message.content in ['!help']:
+        await message.channel.send(f'{HELP_TEXT}')
 
 client.run(TOKEN)
