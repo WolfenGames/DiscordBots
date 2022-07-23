@@ -14,7 +14,6 @@ class RequestFail(Exception):
 class TwitchClient():
     client_id: str
     client_secret: str
-    last_auth_time: str
 
     def __post_init__(self):
         self.token = None
