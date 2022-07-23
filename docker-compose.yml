@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  discord_phasma_phobia_bot:
+    container_name: 'Discord_Phasmo_Bot'
+    build:
+      context: .
+      dockerfile: ./dockerfilePhasmo
+    environment:
+      DISCORD_TOKEN: ${PHASMAPHOBIA_MAP_KEY}
+  discord_destiny_two_bot:
+    container_name: 'Discord_Destiny_2_Bot'
+    build:
+      context: .
+      dockerfile: ./dockerfileDestiny
+    environment:
+      DISCORD_TOKEN: ${DESTINY_2_EVENT_KEY}
