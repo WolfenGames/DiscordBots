@@ -76,4 +76,3 @@ for user in users_info:
     USER_LOGGED[user['login']] = datething
 
 _discord = DiscordBot(_twitch_client, USER_LOGGED)
-print(USER_LOGGED)
