@@ -8,7 +8,7 @@ from twitch_client import TwitchClient
 
 load_dotenv()
 
-TWITCH_TOKEN = os.getenv('TWITCH_AUTH_TOKEN')
+TWITCH_CLIENT_SECRET = os.getenv('TWITCH_CLIENT_SECRET')
 TWITCH_CLIENT_ID = os.getenv('TWITCH_CLIENT_ID')
 USERS = os.getenv('USERS_TO_MONITOR').split(',')
 
@@ -65,7 +65,7 @@ Check them out here: https://twitch.tv/{user_info['user_name']}\n\
                     self.USER_LOGGED[f"{user_info['user_login']}"] = started_at
                     await channel.send(msg)
 
-_twitch_client = TwitchClient(TWITCH_TOKEN, TWITCH_CLIENT_ID)
+_twitch_client = TwitchClient(TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET)
 _twitch_client.set_headers()
 
 users_info = _twitch_client.get_users(USERS)
