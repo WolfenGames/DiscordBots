@@ -56,7 +56,9 @@ class DiscordBot:
                 user_info = fetched[0]
                 msg = f"Hey {role.mention}\n\
 {user_info['user_name']} is streaming {user_info['game_name']}\n\
-Check them out here: https://twitch.tv/{user_info['user_name']}"
+Check them out here: https://twitch.tv/{user_info['user_name']}\n\
+\n\
+{user_info['title']}"
 
                 started_at = user_info['started_at']
                 if self.USER_LOGGED[f"{user_info['user_login']}"] != started_at:
