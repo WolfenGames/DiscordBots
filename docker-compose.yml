@@ -8,6 +8,7 @@ services:
       dockerfile: ./dockerfilePhasmo
     environment:
       DISCORD_TOKEN: ${PHASMAPHOBIA_MAP_KEY}
+
   discord_destiny_two_bot:
     container_name: 'Discord_Destiny_2_Bot'
     build:
@@ -15,3 +16,12 @@ services:
       dockerfile: ./dockerfileDestiny
     environment:
       DISCORD_TOKEN: ${DESTINY_2_EVENT_KEY}
+
+  discord_twitch_notifier:
+    container_name: 'Twitch_notifier'
+    build:
+      context: .
+      dockerfile: ./dockerfileTwitch
+    environment:
+      DISCORD_TOKEN: ${TWITCH_NOTIFIER_KEY}
+      TWITCH_TOKEN: ${TWITCH_AUTH_TOKEN}
